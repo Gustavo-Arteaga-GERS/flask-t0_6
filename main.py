@@ -16,9 +16,9 @@ def sudoku():
   print("YEAHHH")
   print("******")
   # input_data:
-  # jsonInput = request.get_json()
-  # puzzle = jsonInput['puzzle']
-  # print(puzzle)
+  jsonInput = request.get_json()
+  puzzle = jsonInput['puzzle']
+  print(puzzle)
   # # solution = initialProblem
   
   # # Initialize the problem
@@ -65,8 +65,9 @@ def sudoku():
   #                 solution[r][c] = n
   # print(solution)
   
-  res = make_response("yahh", 200)
+
   # res = make_response(jsonify(solution), 200)
+  res = make_response(jsonify(puzzle), 200)
   return res
 
 if __name__ == '__main__':
