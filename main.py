@@ -13,13 +13,13 @@ def index():
 def sudoku():
 
 
-  print("******")
-  print("YEAHHH")
-  print("******")
-  # input_data:
-  jsonInput = request.get_json()
-  puzzle = jsonInput['puzzle']
-  print(puzzle)
+print("******")
+print("YEAHHH")
+print("******")
+# input_data:
+jsonInput = request.get_json()
+puzzle = jsonInput['puzzle']
+print(puzzle)
   # # solution = initialProblem
   
   # # Initialize the problem
@@ -68,8 +68,8 @@ def sudoku():
   
 
   # res = make_response(jsonify(solution), 200)
-  res = make_response(jsonify(puzzle), 200)
-  return res
+res = make_response(jsonify(puzzle), 200)
+return res
 
 if __name__ == '__main__':
   app.run(port=5000)
