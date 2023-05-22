@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template ,request
 from pulp import LpVariable, LpProblem, lpSum, value, LpMinimize
 
 app = Flask(__name__)
