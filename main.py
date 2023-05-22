@@ -1,4 +1,4 @@
-from flask import Flask, render_template ,request,make_response
+from flask import Flask, render_template ,request, make_response
 from pulp import LpVariable, LpProblem, lpSum, value, LpMinimize
 
 app = Flask(__name__)
@@ -13,13 +13,13 @@ def index():
 def sudoku():
 
 
-print("******")
-print("YEAHHH")
-print("******")
-# input_data:
-jsonInput = request.get_json()
-puzzle = jsonInput['puzzle']
-print(puzzle)
+  print("******")
+  print("YEAHHH")
+  print("******")
+  # input_data:
+  jsonInput = request.get_json()
+  puzzle = jsonInput['puzzle']
+  print(puzzle)
   # # solution = initialProblem
   
   # # Initialize the problem
@@ -68,8 +68,8 @@ print(puzzle)
   
 
   # res = make_response(jsonify(solution), 200)
-res = make_response(jsonify(puzzle), 200)
-return res
+  res = make_response(jsonify(puzzle), 200)
+  return res
 
 if __name__ == '__main__':
   app.run(port=5000)
