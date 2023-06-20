@@ -74,7 +74,7 @@ def sudoku():
 
 
 
-@app.route("/rate", methods = ['GET'])
+@app.route("/rate", methods = ['POST'])
 def rate():
     
     # Define the URL of the website you want to scrape
