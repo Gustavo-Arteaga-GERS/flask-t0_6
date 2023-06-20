@@ -84,66 +84,66 @@ def rate():
     puzzle = jsonInput['rate']
     print(puzzle)
     
-    # Define the URL of the website you want to scrape
+    # # Define the URL of the website you want to scrape
     
-    url = "https://www.superfinanciera.gov.co/jsp/"
-    # url = "https://www.banrep.gov.co/docum/buscador_series.html"
+    # url = "https://www.superfinanciera.gov.co/jsp/"
+    # # url = "https://www.banrep.gov.co/docum/buscador_series.html"
     
-    # Send a GET request to the website
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
-    response = requests.get(url, headers=headers)
+    # # Send a GET request to the website
+    # headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
+    # response = requests.get(url, headers=headers)
     
-    # response = requests.get(url)
+    # # response = requests.get(url)
     
-    # Check if the request was successful
-    if response.status_code == 200:
-        # Parse the HTML content using BeautifulSoup
-        soup = BeautifulSoup(response.content, "html.parser")
-        #print("*******************")
-        divs = soup.find_all("div", class_="cont_Indicador")
+    # # Check if the request was successful
+    # if response.status_code == 200:
+    #     # Parse the HTML content using BeautifulSoup
+    #     soup = BeautifulSoup(response.content, "html.parser")
+    #     #print("*******************")
+    #     divs = soup.find_all("div", class_="cont_Indicador")
     
-        print("*******************")
-        string_tmr = divs[0].text
-        tmr = string_tmr[-8:]
-        print(tmr)
-        print("*******************")
+    #     print("*******************")
+    #     string_tmr = divs[0].text
+    #     tmr = string_tmr[-8:]
+    #     print(tmr)
+    #     print("*******************")
     
-    else:
-        print("Failed to retrieve the web page TMR. ☹️")
-    
-    
-    ## EUR / USD
-    url2 = "https://www.xe.com/es/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
-    # Send a GET request to the website
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
-    response = requests.get(url2, headers=headers)
+    # else:
+    #     print("Failed to retrieve the web page TMR. ☹️")
     
     
+    # ## EUR / USD
+    # url2 = "https://www.xe.com/es/currencyconverter/convert/?Amount=1&From=EUR&To=USD"
+    # # Send a GET request to the website
+    # headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
+    # response = requests.get(url2, headers=headers)
     
     
-    # Check if the request was successful
-    if response.status_code == 200:
-        # Parse the HTML content using BeautifulSoup
-        soup = BeautifulSoup(response.content, "html.parser")
-        # print("*******************")
-        all_p = soup.find_all("p", class_="result__BigRate-sc-1bsijpp-1 iGrAod")
+    
+    
+    # # Check if the request was successful
+    # if response.status_code == 200:
+    #     # Parse the HTML content using BeautifulSoup
+    #     soup = BeautifulSoup(response.content, "html.parser")
+    #     # print("*******************")
+    #     all_p = soup.find_all("p", class_="result__BigRate-sc-1bsijpp-1 iGrAod")
         
-        string_rate = all_p[0].text
-        rate = string_rate[:4]
-        print("*******************")
-        print(rate)
-        print("*******************")
+    #     string_rate = all_p[0].text
+    #     rate = string_rate[:4]
+    #     print("*******************")
+    #     print(rate)
+    #     print("*******************")
            
-    else:
-        print("Failed to retrieve the web page EUR-USD. ☹️")
+    # else:
+    #     print("Failed to retrieve the web page EUR-USD. ☹️")
     
     
-    solution = {
-        tmr,
-        rate
-    }
+    # solution = {
+    #     tmr,
+    #     rate
+    # }
     
-    res1 = make_response(jsonify(solution), 200)
+    res1 = make_response(jsonify(puzzle), 200)
     return res1
 
 if __name__ == '__main__':
