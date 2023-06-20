@@ -138,10 +138,10 @@ def rate():
         print("Failed to retrieve the web page EUR-USD. ☹️")
     
     
-    solution = {
+    solution = [
         4444,
         6666
-    }
+    ]
     # solution = {
     #     tmr,
     #     rate
