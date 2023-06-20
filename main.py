@@ -76,6 +76,13 @@ def sudoku():
 
 @app.route("/rate", methods = ['POST'])
 def rate():
+    print("******")
+    print("Start Rate Search")
+    print("******")
+    # input_data:
+    jsonInput = request.get_json()
+    puzzle = jsonInput['rate']
+    print(puzzle)
     
     # Define the URL of the website you want to scrape
     
