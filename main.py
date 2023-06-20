@@ -139,13 +139,9 @@ def rate():
     
     
     solution = [
-        4444,
-        6666
+        tmr,
+        rate
     ]
-    # solution = {
-    #     tmr,
-    #     rate
-    # }
     
     res1 = make_response(jsonify(solution), 200)
     return res1
