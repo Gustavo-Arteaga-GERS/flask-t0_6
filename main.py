@@ -136,8 +136,8 @@ def rate():
         value_rate: rate
     }
     
-    res = make_response(jsonify(solution), 200)
-    return res
+    res1 = make_response(jsonify(solution), 200)
+    return res1
 
 if __name__ == '__main__':
   app.run(port=5000)
