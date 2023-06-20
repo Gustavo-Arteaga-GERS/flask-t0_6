@@ -132,8 +132,8 @@ def rate():
     
     
     solution = {
-        value_TMR:tmr,
-        value_rate: rate
+        tmr,
+        rate
     }
     
     res1 = make_response(jsonify(solution), 200)
